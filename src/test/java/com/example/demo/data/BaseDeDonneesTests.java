@@ -16,8 +16,16 @@ public class BaseDeDonneesTests {
 
     @Test
     void uneVoiture(){
+        Voiture voiture = new Voiture();
+        voiture.setMarque("Audi");
+        voiture.setPrix(40000);
+        voitureRepository.save(voiture);
+        when(voitureRepository.findAll()).thenReturn(Collections.singletonList(voiture));
         // tester les méthodes de l'interface CrudRepository qui permette d'accéder à la base de données: https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html
         // save, find, delete...
     }
 
 }
+
+
+
